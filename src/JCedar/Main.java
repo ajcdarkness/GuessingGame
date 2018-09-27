@@ -25,6 +25,8 @@ public class Main {
 
     public static void betterGuesses() { //Computer guesses and we answer "higher", "lower", or "correct"
         Scanner input = new Scanner(System.in);
+        System.out.println("What's your name?!");
+        String name = input.nextLine();
         int initial = 50;
         System.out.println("50");
         int winCondition = 0;
@@ -35,22 +37,23 @@ public class Main {
            if(UI.equals("higher")){
                if(initial < 90) { //if num is greater then 90 it was throwing an error so modified the code.
                    initial = initial + num; //adds to the number about to be guessed based upon the amount of guesses made and the previous guess
-                   System.out.println(initial);
+                   System.out.println(initial + ", " + name);
                }else{ // greater then 90 iterate by 1
                    initial = initial + 1;
-                   System.out.println(initial);
+                   System.out.println(initial + ", " + name);
                }
            }else if(UI.equals("lower")){
                if(initial >10) { ////if num less then 10 it was throwing an error so modified the code.
                    initial = initial - num; //subtracts to the number about to be guessed based upon the amount of guesses made and the previous guess.
-                   System.out.println(initial);
+                   System.out.println(initial + ", " + name);
                }else{ // less then 10 iterate by 1
                    initial = initial - 1;
-                   System.out.println(initial);
+                   System.out.println(initial + ", " + name);
                }
            }else if(UI.equals("correct")){ //if the guess is correct, break the while loop and computer states that it won
-               System.out.println("I have guessed correctly");
+               System.out.println("I have guessed your number, " + name);
                winCondition = 1;
+               System.out.println("I've guessed " + guessCount + "times");
            }
            guessCount++;
         }
