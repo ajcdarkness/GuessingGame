@@ -53,7 +53,7 @@ public class Main {
            }else if(UI.equals("correct")){ //if the guess is correct, break the while loop and computer states that it won
                System.out.println("I have guessed your number, " + name);
                winCondition = 1;
-               System.out.println("I've guessed " + guessCount + "times");
+               System.out.println("I've guessed " + guessCount + " times");
            }
            guessCount++;
         }
